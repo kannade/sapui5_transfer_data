@@ -1,0 +1,32 @@
+<mvc:View controllerName="transfer.info.controller.Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form">
+	<App id="idAppControl">
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+					<l:HorizontalLayout class="sapUiContentPadding">
+						<l:VerticalLayout class="sapUiContentPadding" id="verL">
+							<Label id="oneLabel" text="1"/>
+							<Label id="twoLabel" text="2"/>
+							<Label id="threeLabel" text="3"/>
+							<Label id="fourLabel" text="4"/>
+							<Label id="fiveLabel" text="5"/>
+						</l:VerticalLayout>
+						<VBox class="sapUiSmallMargin">
+							<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="Address" labelSpanXL="3" labelSpanL="3"
+								labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"
+								columnsL="1" columnsM="1" singleContainerFullSize="false">
+								<f:content>
+									<Label id="sixLabel" text="Name"/>
+									<Input id="name" value="123"/>
+									<Label text="Street/No."/>
+									<Input value="456"></Input>
+								</f:content>
+							</f:SimpleForm>
+						</VBox>
+					</l:HorizontalLayout>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
