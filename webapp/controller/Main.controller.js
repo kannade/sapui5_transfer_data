@@ -1,16 +1,24 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"transfer/info/model/Utils",
-], function(Controller, Utils) {
+	"sap/m/MessageToast"
+], function (Controller, Utils, MessageToast) {
 	"use strict";
 
 	return Controller.extend("transfer.info.controller.Main", {
 
-		onInit: function() {
-
+		onInit: function () {
+			// подписываемся на событие
+			var oEventBus = sap.ui.getCore().getEventBus();
+			oEventBus.subscribe(
+				"way1",
+				"afterInitComp",
+				this.onAfterInitComp,
+				this
+			);
 		},
 
-		onAfterRendering: function() {
+		onAfterRendering: function () {
 			var oComp = this.getOwnerComponent();
 			var testModel = oComp.getModel("testmodel");
 			var aData = testModel.getData();
@@ -38,6 +46,10 @@ sap.ui.define([
 
 			//Достанем объект из глобального объекта
 			verticalL.addContent(sap.alfa.dataBinding.key2);
+		},
+
+		onAfterInitComp: function (channel, event, item) {
+			MessageToast.show(item);
 		}
 
 	});

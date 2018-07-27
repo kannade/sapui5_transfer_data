@@ -3,7 +3,7 @@ sap.ui.define([
 	"sap/ui/Device",
 	"transfer/info/model/models",
 	"transfer/info/model/Utils"
-], function(UIComponent, Device, models, Utils) {
+], function (UIComponent, Device, models, Utils) {
 	"use strict";
 
 	return UIComponent.extend("transfer.info.Component", {
@@ -17,7 +17,7 @@ sap.ui.define([
 		 * @public
 		 * @override
 		 */
-		init: function() {
+		init: function () {
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
@@ -80,6 +80,12 @@ sap.ui.define([
 				key1: "Тест текст из глобального объекта",
 				key2: oLabel3
 			};
+
+			//Передадим событие в другой контроллер
+			var oEventBus = sap.ui.getCore().getEventBus();
+			oEventBus.publish(
+				"way1", "afterInitComp", d
+			);
 
 		}
 	});
